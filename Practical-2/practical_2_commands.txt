@@ -1,0 +1,80 @@
+PRACTICAL 2 - WORKING WITH MONGODB DOCUMENTS AND COLLECTIONS
+
+1. Select Database
+
+use StudentDB
+
+
+2. Insert a Single Document
+
+db.students.insertOne({
+    rollNo: 101,
+    name: "Aarav",
+    course: "BCA",
+    semester: 3,
+    marks: 82,
+    attendance: 92
+})
+
+
+3. Insert Multiple Documents
+
+db.students.insertMany([
+    {
+        rollNo: 102,
+        name: "Aditi",
+        course: "BCA",
+        semester: 3,
+        marks: 91,
+        attendance: 95
+    },
+    {
+        rollNo: 103,
+        name: "Aditya",
+        course: "BCA",
+        semester: 3,
+        marks: 76,
+        attendance: 81
+    },
+    {
+        rollNo: 104,
+        name: "Akash",
+        course: "BCA",
+        semester: 3,
+        marks: 88,
+        attendance: 88
+    }
+])
+
+
+4. View Documents
+
+db.students.find()
+
+db.students.find({course: "BCA"})
+
+db.students.find({marks: {$gt: 80}})
+
+
+5. Update a Document
+
+db.students.updateOne(
+    {rollNo: 101},
+    {$set: {marks: 90}}
+)
+
+db.students.findOne({rollNo: 101})
+
+
+6. Delete a Document
+
+db.students.deleteOne({rollNo: 140})
+
+db.students.findOne({rollNo: 140})
+
+
+7. Verify Collection
+
+show collections
+
+db.students.countDocuments()
