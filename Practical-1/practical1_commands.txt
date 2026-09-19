@@ -1,0 +1,22 @@
+PRACTICAL 1 - INSTALLATION AND CONFIGURATION OF MONGODB
+
+Commands Used
+==============
+
+1. Verify MongoDB service:
+sc query MongoDB
+
+2. Check MongoDB service configuration:
+sc qc MongoDB
+
+3. Start MongoDB Shell:
+mongosh
+
+4. Select/Create StudentDB database:
+use StudentDB
+
+5. Create students collection:
+db.createCollection("students")
+
+6. Verify collections:
+show collections
